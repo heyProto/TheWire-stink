@@ -99,7 +99,7 @@ $(document).ready(function(){
     }
 
 });
-Util.getJSON('https://cdn.protograph.pykih.com/bd88ce325d5266c298ec1b60/index.json', function (err, data){
+Util.getJSON('https://cdn.protograph.pykih.com/123d40db45ec0988391bd2dd/index.json', function (err, data){
     if (err != null) {
         alert('Something went wrong: ' + err);
     } else {

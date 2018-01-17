@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
     // $(".banner-div a:empty").parent("p").css("display", "none");
 
-    Util.getJSON('https://cdn.protograph.pykih.com/c0a74f9bfa12c162787d6fbe/index.json', function (err, data){
+    Util.getJSON('https://cdn.protograph.pykih.com/7562729bd8455861f74fac6d/index.json', function (err, data){
         if (err != null) {
             alert('Something went wrong: ' + err);
         } else {
