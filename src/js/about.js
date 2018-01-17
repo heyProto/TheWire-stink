@@ -18,7 +18,7 @@ $(document).ready(function(){
                 offset: 70
             });
         })
-        Util.getJSON('https://cdn.protograph.pykih.com/04437aa71365b4eac710d54c/index.json', function (err, data) {
+        Util.getJSON('https://cdn.protograph.pykih.com/e0a2f448867aece1242dd088/index.json', function (err, data) {
             if (err != null) {
                 alert('Something went wrong: ' + err);
             } else {
@@ -122,9 +122,3 @@ Util.getJSON('https://cdn.protograph.pykih.com/123d40db45ec0988391bd2dd/index.js
         }
     }
 });
-// if(document.getElementById('cont-button')){
-//     document.getElementById('cont-button').onclick = function(e){
-//         document.getElementById('cont-button').style.display = 'none';
-//         document.getElementById('article').className='article-area';
-//     }
-// }
