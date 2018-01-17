@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     },0)
                 })
             } else {
-                $(originals_container).siblings(".column-title").hide();
+                $(cover_container).siblings(".column-title").hide();
             }
         }
     });
