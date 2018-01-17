@@ -16,18 +16,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 alert('Something went wrong: ' + err);
             } else {
                 originals_container = document.getElementById("originals_container");
-                data.map((d,i) => {
-                    let createDiv = document.createElement('div');
-                    createDiv.id = 'ProtoCard-originals'+i;
-                    createDiv.className= 'ProtoCard-originals';
-                    originals_container.appendChild(createDiv);
-                    let createMarginDiv = document.createElement('div');
-                    createMarginDiv.style.marginBottom = "20px";
-                    originals_container.appendChild(createMarginDiv);
-                    setTimeout(function(){
-                        new ProtoEmbed.initFrame(document.getElementById("ProtoCard-originals"+i), data[i].iframe_url, "col7");
-                    },0)
-                })
+                if (data.length > 0) {
+                    data.map((d,i) => {
+                        let createDiv = document.createElement('div');
+                        createDiv.id = 'ProtoCard-originals'+i;
+                        createDiv.className= 'ProtoCard-originals';
+                        originals_container.appendChild(createDiv);
+                        let createMarginDiv = document.createElement('div');
+                        createMarginDiv.style.marginBottom = "20px";
+                        originals_container.appendChild(createMarginDiv);
+                        setTimeout(function(){
+                            new ProtoEmbed.initFrame(document.getElementById("ProtoCard-originals"+i), data[i].iframe_url, "col7");
+                        },0)
+                    })
+                } else {
+                    $(originals_container).siblings(".column-title").hide();
+                }
             }
         });
 
@@ -36,18 +40,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 alert('Something went wrong: ' + err);
             } else {
                 feeds_container = document.getElementById("feeds_container");
-                data.map((d,i) => {
-                    let createDiv = document.createElement('div');
-                    createDiv.id = 'ProtoCard-feeds'+i;
-                    createDiv.className= 'ProtoCard-feeds';
-                    feeds_container.appendChild(createDiv);
-                    let createMarginDiv = document.createElement('div');
-                    createMarginDiv.style.marginBottom = "20px";
-                    feeds_container.appendChild(createMarginDiv);
-                    setTimeout(function(){
-                        new ProtoEmbed.initFrame(document.getElementById("ProtoCard-feeds"+i), data[i].iframe_url, "col3");
-                    },0)
-                })
+                if (data.length > 0) {
+                    data.map((d,i) => {
+                        let createDiv = document.createElement('div');
+                        createDiv.id = 'ProtoCard-feeds'+i;
+                        createDiv.className= 'ProtoCard-feeds';
+                        feeds_container.appendChild(createDiv);
+                        let createMarginDiv = document.createElement('div');
+                        createMarginDiv.style.marginBottom = "20px";
+                        feeds_container.appendChild(createMarginDiv);
+                        setTimeout(function(){
+                            new ProtoEmbed.initFrame(document.getElementById("ProtoCard-feeds"+i), data[i].iframe_url, "col3");
+                        },0)
+                    })
+                } else {
+                    $(feeds_container).siblings(".column-title").hide();
+                }
             }
         });
 
@@ -139,24 +147,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     }
     // $(".banner-div a:empty").parent("p").css("display", "none");
-
-    Util.getJSON('', function (err, data){
+    Util.getJSON('https://cdn.protograph.pykih.com/7562729bd8455861f74fac6d/index.json', function (err, data){
         if (err != null) {
             alert('Something went wrong: ' + err);
         } else {
-            cover_container = document.getElementById("cover_container")
-            data.map((d,i) => {
-                let createDiv = document.createElement('div');
-                createDiv.id = 'ProtoCard-cover'+i;
-                createDiv.className= 'ProtoCard-cover';
-                cover_container.appendChild(createDiv);
-                let createMarginDiv = document.createElement('div');
-                createMarginDiv.style.marginBottom = "20px";
-                cover_container.appendChild(createMarginDiv);
-                setTimeout(function(){
-                    new ProtoEmbed.initFrame(document.getElementById("ProtoCard-cover"+i), data[i].iframe_url, "col16");
-                },0)
-            })
+            cover_container = document.getElementById("cover_container");
+            if (data.length > 0) {
+                data.map((d,i) => {
+                    let createDiv = document.createElement('div');
+                    createDiv.id = 'ProtoCard-cover'+i;
+                    createDiv.className= 'ProtoCard-cover';
+                    cover_container.appendChild(createDiv);
+                    let createMarginDiv = document.createElement('div');
+                    createMarginDiv.style.marginBottom = "20px";
+                    cover_container.appendChild(createMarginDiv);
+                    setTimeout(function(){
+                        new ProtoEmbed.initFrame(document.getElementById("ProtoCard-cover"+i), data[i].iframe_url, "col16");
+                    },0)
+                })
+            } else {
+                $(originals_container).siblings(".column-title").hide();
+            }
         }
     });
 
@@ -165,18 +176,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
             alert('Something went wrong: ' + err);
         } else {
             digests_container = document.getElementById("digests_container");
-            data.map((d,i) => {
-                let createDiv = document.createElement('div');
-                createDiv.id = 'ProtoCard-digests'+i;
-                createDiv.className= 'ProtoCard-digests';
-                digests_container.appendChild(createDiv);
-                let createMarginDiv = document.createElement('div');
-                createMarginDiv.style.marginBottom = "20px";
-                digests_container.appendChild(createMarginDiv);
-                setTimeout(function(){
-                    new ProtoEmbed.initFrame(document.getElementById("ProtoCard-digests"+i), data[i].iframe_url, "col4");
-                },0)
-            })
+            if (data.length > 0) {
+                data.map((d,i) => {
+                    let createDiv = document.createElement('div');
+                    createDiv.id = 'ProtoCard-digests'+i;
+                    createDiv.className= 'ProtoCard-digests';
+                    digests_container.appendChild(createDiv);
+                    let createMarginDiv = document.createElement('div');
+                    createMarginDiv.style.marginBottom = "20px";
+                    digests_container.appendChild(createMarginDiv);
+                    setTimeout(function(){
+                        new ProtoEmbed.initFrame(document.getElementById("ProtoCard-digests"+i), data[i].iframe_url, "col4");
+                    },0)
+                })
+            } else {
+                $(digests_container).siblings(".column-title").hide();
+            }
         }
     });
 
@@ -186,18 +201,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
             alert('Something went wrong: ' + err);
         } else {
             opinions_container = document.getElementById("opinions_container");
-            data.map((d,i) => {
-                let createDiv = document.createElement('div');
-                createDiv.id = 'ProtoCard-opinions'+i;
-                createDiv.className= (mode == "mobile" && (i+1)%2 == 0) ? 'ProtoCard-opinions div-without-margin-right' : 'ProtoCard-opinions'  ;
-                opinions_container.appendChild(createDiv);
-                let createMarginDiv = document.createElement('div');
-                createMarginDiv.style.marginBottom = "20px";
-                opinions_container.appendChild(createMarginDiv);
-                setTimeout(function(){
-                    new ProtoEmbed.initFrame(document.getElementById("ProtoCard-opinions"+i), data[i].iframe_url, "col2");
-                },0)
-            })
+            if (data.length > 0) {
+                data.map((d,i) => {
+                    let createDiv = document.createElement('div');
+                    createDiv.id = 'ProtoCard-opinions'+i;
+                    createDiv.className= (mode == "mobile" && (i+1)%2 == 0) ? 'ProtoCard-opinions div-without-margin-right' : 'ProtoCard-opinions'  ;
+                    opinions_container.appendChild(createDiv);
+                    let createMarginDiv = document.createElement('div');
+                    createMarginDiv.style.marginBottom = "20px";
+                    opinions_container.appendChild(createMarginDiv);
+                    setTimeout(function(){
+                        new ProtoEmbed.initFrame(document.getElementById("ProtoCard-opinions"+i), data[i].iframe_url, "col2");
+                    },0)
+                })
+            } else {
+                $(opinions_container).siblings(".column-title").hide();
+            }
         }
     });
 
