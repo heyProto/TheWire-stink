@@ -59,6 +59,30 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
 
+        Util.getJSON('https://cdn.protograph.pykih.com/445ea87bd708c3d1cb90e0d0/index.json', function (err, data){
+            if (err != null) {
+                alert('Something went wrong: ' + err);
+            } else {
+                cover_container = document.getElementById("cover_container");
+                if (data.length > 0) {
+                    data.map((d,i) => {
+                        let createDiv = document.createElement('div');
+                        createDiv.id = 'ProtoCard-cover'+i;
+                        createDiv.className= 'ProtoCard-cover';
+                        cover_container.appendChild(createDiv);
+                        let createMarginDiv = document.createElement('div');
+                        createMarginDiv.style.marginBottom = "20px";
+                        cover_container.appendChild(createMarginDiv);
+                        setTimeout(function(){
+                            new ProtoEmbed.initFrame(document.getElementById("ProtoCard-cover"+i), data[i].iframe_url, "col16");
+                        },0)
+                    })
+                } else {
+                    $(cover_container).siblings(".column-title").hide();
+                }
+            }
+        });
+
 
     }
 
@@ -144,32 +168,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
 
+        Util.getJSON('https://cdn.protograph.pykih.com/445ea87bd708c3d1cb90e0d0/index.json', function (err, data){
+            if (err != null) {
+                alert('Something went wrong: ' + err);
+            } else {
+                cover_container = document.getElementById("cover_container");
+                if (data.length > 0) {
+                    data.map((d,i) => {
+                        let createDiv = document.createElement('div');
+                        createDiv.id = 'ProtoCard-cover'+i;
+                        createDiv.className= 'ProtoCard-cover';
+                        cover_container.appendChild(createDiv);
+                        let createMarginDiv = document.createElement('div');
+                        createMarginDiv.style.marginBottom = "20px";
+                        cover_container.appendChild(createMarginDiv);
+                        setTimeout(function(){
+                            new ProtoEmbed.initFrame(document.getElementById("ProtoCard-cover"+i), data[i].iframe_url, "col4");
+                        },0)
+                    })
+                } else {
+                    $(cover_container).siblings(".column-title").hide();
+                }
+            }
+        });
 
     }
     // $(".banner-div a:empty").parent("p").css("display", "none");
-    Util.getJSON('https://cdn.protograph.pykih.com/7562729bd8455861f74fac6d/index.json', function (err, data){
-        if (err != null) {
-            alert('Something went wrong: ' + err);
-        } else {
-            cover_container = document.getElementById("cover_container");
-            if (data.length > 0) {
-                data.map((d,i) => {
-                    let createDiv = document.createElement('div');
-                    createDiv.id = 'ProtoCard-cover'+i;
-                    createDiv.className= 'ProtoCard-cover';
-                    cover_container.appendChild(createDiv);
-                    let createMarginDiv = document.createElement('div');
-                    createMarginDiv.style.marginBottom = "20px";
-                    cover_container.appendChild(createMarginDiv);
-                    setTimeout(function(){
-                        new ProtoEmbed.initFrame(document.getElementById("ProtoCard-cover"+i), data[i].iframe_url, "col16");
-                    },0)
-                })
-            } else {
-                $(cover_container).siblings(".column-title").hide();
-            }
-        }
-    });
 
     Util.getJSON('https://cdn.protograph.pykih.com/6a0fa6737a3d04e17e13cf99/index.json', function (err, data){
         if (err != null) {
