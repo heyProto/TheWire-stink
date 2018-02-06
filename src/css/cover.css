@@ -17,7 +17,7 @@
 }
 
 .ProtoCard-cover{
-    min-height: 250px;
+    min-height: 430px;
 }
 
 .ProtoCard-feeds, .ProtoCard-originals iframe, .ProtoCard-digests, .ProtoCard-opinions, .ProtoCard-cover{
@@ -44,6 +44,9 @@
 }
 
 @media only screen and (max-width: 500px) {
+    .ProtoCard-cover{
+        min-height: 250px;
+    }
     .proto-mobile-grid-navigation {
         display: block;
         background: #ffffff;
