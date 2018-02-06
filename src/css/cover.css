@@ -17,7 +17,7 @@
 }
 
 .ProtoCard-cover{
-    min-height: 430px;
+    min-height: 250px;
 }
 
 .ProtoCard-feeds, .ProtoCard-originals iframe, .ProtoCard-digests, .ProtoCard-opinions, .ProtoCard-cover{
